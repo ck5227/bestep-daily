@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><style>.tbl{border-collapse:collapse;margin:4px 0 8px;font-family:var(--f-ui);font-size:14px;display:block;overflow-x:auto}.tbl caption{text-align:left;font-weight:600;padding-bottom:4px}.tbl th,.tbl td{border:1px solid var(--line);padding:4px 10px;text-align:left}.tbl th{background:var(--bg)}</style>
 <title>BESTEP 校園英文每日練｜每日聽力・閱讀・單字練習題</title>
 <meta name="description" content="BESTEP 校園英文每日練：每天早上更新一組大學校園情境的英文聽力、閱讀與單字練習題，附答案與中文詳解，可線上作答並朗讀聽力。">
 <link rel="canonical" href="https://ck5227.github.io/bestep-daily/">
@@ -114,7 +114,7 @@ details.tx summary{cursor:pointer;color:var(--accent);font-size:13px;font-weight
   <header>
     <div class="eyebrow">BESTEP · Campus English · Daily Set</div>
     <h1 id="title">每日校園英文：<span class="theme" id="theme">載入中</span></h1>
-    <div class="meta"><span id="dateLabel">每天早上 7:00 更新一組新題目</span><span>聽力 · 閱讀 · 單字</span><a href="https://www.youtube.com/channel/UCtvxiHqiSLNGb_bi3grRGzw" style="color:var(--accent)">▶ YouTube 每日聽力影片</a></div>
+    <div class="meta"><span id="dateLabel">每天早上 7:00 更新一組新題目</span><span>聽力 · 閱讀 · 單字</span><a href="mock/" style="color:var(--accent);font-weight:600">📝 全真模擬考（35＋35 題）</a><a href="https://www.youtube.com/channel/UCtvxiHqiSLNGb_bi3grRGzw" style="color:var(--accent)">▶ YouTube 每日聽力影片</a></div>
     <div class="dates" id="dates" aria-label="選擇日期"></div>
   </header>
 
@@ -249,7 +249,7 @@ details.tx summary{cursor:pointer;color:var(--accent);font-size:13px;font-weight
         }
       } else if (g.passage){
         const ps=document.createElement("div"); ps.className="passage";
-        ps.innerHTML = (g.title?`<h3>${esc(g.title)}</h3>`:"") + (g.head?`<div class="mailhead">${g.head.map(esc).join("<br>")}</div>`:"") + g.passage.map(p=>`<p>${md(p)}</p>`).join("");
+        ps.innerHTML = (g.title?`<h3>${esc(g.title)}</h3>`:"") + (g.head?`<div class="mailhead">${g.head.map(esc).join("<br>")}</div>`:"") + g.passage.map(p=>`<p>${md(p)}</p>`).join("")+ (g.table?`<table class="tbl">${g.table.caption?`<caption>${esc(g.table.caption)}</caption>`:""}<tr>${g.table.headers.map(h=>`<th>${esc(h)}</th>`).join("")}</tr>${g.table.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table>`:"");
         card.appendChild(ps);
       }
       (g.questions||[]).forEach(q => { n++; card.appendChild(renderQ(q, n, done)); });
